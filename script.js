@@ -103,9 +103,8 @@ let showInfo = (monument) => {
             country.textContent ="France"
             description.textContent = "Le Château de Versailles est un symbole de la monarchie française et un chef-d'œuvre de l'architecture classique. Situé à environ 20 kilomètres à l'ouest de Paris, il a été construit à l'origine comme un pavillon de chasse pour Louis XIII au 17e siècle, mais Louis XIV a transformé et agrandi le site pour en faire sa résidence principale à partir de 1682."
         }
-
+        
         dataSection.classList.toggle('animateData') // remove the class that animate the section after 1s
         mapCanva.classList.add('show') //add a class to display the map 
     }, 1000)
 }
-
