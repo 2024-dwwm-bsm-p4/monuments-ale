@@ -4,7 +4,7 @@ const town = document.querySelector("section:last-of-type h3")
 const country = document.querySelector("section:last-of-type strong")
 const description = document.querySelector("section:last-of-type p")
 const dataSection = document.querySelector("section:last-of-type")
-const images = document.querySelectorAll("section:nth-of-type(2) img")
+const images = document.querySelectorAll("section:nth-of-type(2) div")
 const mapCanva = document.querySelector("section:last-of-type div:first-of-type")
 
 // Map creation
