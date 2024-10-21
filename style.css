@@ -16,6 +16,7 @@
 html,
 body {
     height: 100%;
+    overflow-x: hidden
 }
 
 body {
@@ -66,3 +67,96 @@ a {
 #__next {
     isolation: isolate;
 }
+
+main section:first-of-type{
+    columns: 5 auto;
+}
+
+main section:first-of-type div{
+    background-color: var(--black);
+    color: var(--white);
+    width: 80%;
+    margin: 0 auto 20px auto;
+    padding: 10px 10px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+section:nth-of-type(2){
+    columns: 5 auto;
+    column-gap: 0;
+    transition: 200ms ease 50ms;
+    margin-bottom: 40px;
+}
+
+section:hover img:not(:hover){
+    filter: blur(5px) saturate(0);
+}
+
+section img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 1px solid black
+}
+
+
+main section:last-of-type{
+    background-color: var(--black);
+    color: var(--white);
+    padding: 75px;
+    height: fit-content;
+    transition: opacity 1s ease, display 2s ease allow-discrete;
+    
+    &.animateData{
+        opacity: 0;
+    }
+}
+
+@starting-style{
+    section.animateData{
+        opacity: 1
+    }
+
+}
+main section:last-of-type h2{
+    font-size: 6rem;
+}
+
+main section:last-of-type h3{
+    font-size: 2rem;
+    font-weight: lighter;
+    display: inline;
+}
+
+main section:last-of-type strong{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+main section:last-of-type p{
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+main section:last-of-type * {
+    width: 80%;
+}
+
+.grey{
+    filter: blur(5px) saturate(0);
+}
+
+h1{
+    text-align: center;
+    font-size: 6rem;
+}
+
+header p{   
+    text-decoration: underline;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 50px;
+}
+

@@ -15,7 +15,29 @@
 <body>
     <header>
         <h1>Les monuments</h1>
+        <p>Cliquez sur un monument ou sur un bouton pour obtenir une description</p>
     </header>
+    <main>
+        <section>
+            <div onclick="showInfo('eiffelTower')">Tour Eiffel</div>
+            <div onclick="showInfo('notreDame')">Notre-Dame</div>
+            <div onclick="showInfo('triumph')">Arc de triomphe</div>
+            <div onclick="showInfo('saintMichel')">Mont Saint-Michel</div>
+            <div onclick="showInfo('versailles')">Versailles</div>
+        </section>
+        <section>
+            <img src="images/tour_eiffel.webp" alt="" onclick="showInfo('eiffelTower')">
+            <img src="images/notre_dame.webp" alt="" onclick="showInfo('notreDame')">
+            <img src="images/arc_de_triomphe.webp" alt="" onclick="showInfo('triumph')">
+            <img src="images/mont_saint_michel.webp" alt="" onclick="showInfo('saintMichel')">
+            <img src="images/versailles.webp" alt="" onclick="showInfo('versailles')">
+        </section>
+        <section>
+            <h2></h2>
+            <h3></h3><strong></strong>
+            <p></p>
+        </section>
+    </main>
     <script type="text/javascript" src="script.js"></script>
 </body>
 
