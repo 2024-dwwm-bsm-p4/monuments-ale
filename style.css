@@ -68,10 +68,28 @@ a {
     isolation: isolate;
 }
 
+/* Main title property */
+h1{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 4rem;
+}
+
+/* Instruction property */
+header p{   
+    text-decoration: underline;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 50px;
+}
+
+/* Select the first section on the html and split it to 5 even columns */
 main section:first-of-type{
     columns: 5 auto;
 }
 
+/* Design for my button */
 main section:first-of-type div{
     background-color: var(--black);
     color: var(--white);
@@ -82,7 +100,11 @@ main section:first-of-type div{
     text-align: center;
 }
 
-
+/* 
+    Select the second section on the html
+    Transition allow the next css trick
+    transform allow the depth effect
+*/
 section:nth-of-type(2){
     columns: 5 auto;
     column-gap: 0;
@@ -92,14 +114,17 @@ section:nth-of-type(2){
     transform: perspective(1000px);
 }
 
+/* Blur and greyscale every img except the one hoverd */
 section:nth-of-type(2):hover img:not(:hover){
     filter: blur(3px) saturate(0);
 }
 
+/* Move the hover img forward */
 section:nth-of-type(2) img:hover{
     transform: translateZ(50px);
 }
 
+/* The selector "+ *" target any element directly after the previous target (section:nth-of-type(2) in this case) */
 section:nth-of-type(2) img:hover + *{
     transform: rotateY(10deg);
     transform: translateZ(-150px);
@@ -119,6 +144,8 @@ section:nth-of-type(2) img:hover + * + * + * + *{
     transform: rotateY(40deg);
     transform: translateZ(-450px);
 }
+
+/* The selector "+ *:hover" combine with :has target any element directly before element */
 
 section:nth-of-type(2) img:has(+ *:hover){
     transform: rotateY(-10deg);
@@ -141,13 +168,15 @@ section:nth-of-type(2) img:has(+ * + * + * + *:hover){
     transform: translateZ(-450px);
 }
 
-section img{
+
+/* Setup the size and add a border to the images contained into the second section */
+section:nth-of-type(2) img{
     width: 100%;
     aspect-ratio: 1/1;
     border: 1px solid black
 }
 
-
+/* Select the last section (the section which contain all the infos about the monument)*/
 main section:last-of-type{
     background-color: var(--black);
     color: var(--white);
@@ -160,12 +189,14 @@ main section:last-of-type{
     }
 }
 
+/* Allow the smooth transition with opacity in pair with transition: allow-discrete */
 @starting-style{
     section.animateData{
         opacity: 1
     }
-
 }
+
+/* All the last section css property */
 main section:last-of-type h2{
     font-size: 6rem;
 }
@@ -190,42 +221,33 @@ main section:last-of-type *{
     width: 80%;
 }
 
-.grey{
-    filter: blur(3px) saturate(0);
-}
-
-h1{
-    text-align: center;
-    margin-top: 50px;
-    font-size: 4rem;
-}
-
-header p{   
-    text-decoration: underline;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 50px;
-}
-
-main section:last-of-type > div:first-of-type{
-    height: 50px;
-    overflow: hidden;
-    opacity: 0;
-}
-
-main section:last-of-type > div:first-of-type.show{
-    height: fit-content;
-    opacity: 1;
-}
-
+/* Property for the map container */
 #map{
     width: 60%;
     aspect-ratio: 1 / 1;
     margin: auto;
 }
 
+/* remove every border possible within "leaflet/open street map" map*/
 #map * {
     border: none
 }
 
+
+/* Management of the map display (initially transparent with an overflow hidden to block scrolling) */
+main section:last-of-type > div:first-of-type{
+    height: 50px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+/* When display opacity go up to 1*/
+main section:last-of-type > div:first-of-type.show{
+    height: fit-content;
+    opacity: 1;
+}
+
+/* The class used in javascript to greyscale and blur img not clicked*/
+.grey{
+    filter: blur(3px) saturate(0);
+}
