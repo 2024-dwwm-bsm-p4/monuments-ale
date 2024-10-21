@@ -88,10 +88,57 @@ section:nth-of-type(2){
     column-gap: 0;
     transition: 200ms ease 50ms;
     margin-bottom: 40px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
 }
 
 section:nth-of-type(2):hover img:not(:hover){
     filter: blur(3px) saturate(0);
+}
+
+section:nth-of-type(2) img:hover{
+    transform: translateZ(50px);
+}
+
+section:nth-of-type(2) img:hover + *{
+    transform: rotateY(10deg);
+    transform: translateZ(-150px);
+}
+
+section:nth-of-type(2) img:hover + * + *{
+    transform: rotateY(20deg);
+    transform: translateZ(-250px);
+}
+
+section:nth-of-type(2) img:hover + * + * + *{
+    transform: rotateY(30deg);
+    transform: translateZ(-350px);
+}
+
+section:nth-of-type(2) img:hover + * + * + * + *{
+    transform: rotateY(40deg);
+    transform: translateZ(-450px);
+}
+
+section:nth-of-type(2) img:has(+ *:hover){
+    transform: rotateY(-10deg);
+    transform: translateZ(-150px);
+}
+
+
+section:nth-of-type(2) img:has(+ * + *:hover){
+    transform: rotateY(-20deg);
+    transform: translateZ(-250px);
+}
+
+section:nth-of-type(2) img:has(+ * + * + *:hover){
+    transform: rotateY(-30deg);
+    transform: translateZ(-350px);
+}
+
+section:nth-of-type(2) img:has(+ * + * + * + *:hover){
+    transform: rotateY(-40deg);
+    transform: translateZ(-450px);
 }
 
 section img{
@@ -139,23 +186,8 @@ main section:last-of-type p{
     font-weight: lighter;
 }
 
-main section:last-of-type * {
+main section:last-of-type *{
     width: 80%;
-}
-
-main section:last-of-type img:first-of-type {
-    width: 30%;
-    aspect-ratio: 1/1;
-    margin: 20px auto;
-    position: relative;
-}
-
-main section:last-of-type img[src=""] {
-    width: 30%;
-    aspect-ratio: 1/1;
-    margin: 20px auto;
-    position: absolute;
-    display: none;
 }
 
 .grey{
@@ -164,7 +196,8 @@ main section:last-of-type img[src=""] {
 
 h1{
     text-align: center;
-    font-size: 6rem;
+    margin-top: 50px;
+    font-size: 4rem;
 }
 
 header p{   
@@ -175,8 +208,19 @@ header p{
     padding: 50px;
 }
 
+main section:last-of-type > div:first-of-type{
+    height: 50px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+main section:last-of-type > div:first-of-type.show{
+    height: fit-content;
+    opacity: 1;
+}
+
 #map{
-    width: 30%;
+    width: 60%;
     aspect-ratio: 1 / 1;
     margin: auto;
 }
