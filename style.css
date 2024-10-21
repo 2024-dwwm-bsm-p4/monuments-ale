@@ -90,8 +90,8 @@ section:nth-of-type(2){
     margin-bottom: 40px;
 }
 
-section:hover img:not(:hover){
-    filter: blur(5px) saturate(0);
+section:nth-of-type(2):hover img:not(:hover){
+    filter: blur(3px) saturate(0);
 }
 
 section img{
@@ -143,8 +143,23 @@ main section:last-of-type * {
     width: 80%;
 }
 
+main section:last-of-type img:first-of-type {
+    width: 30%;
+    aspect-ratio: 1/1;
+    margin: 20px auto;
+    position: relative;
+}
+
+main section:last-of-type img[src=""] {
+    width: 30%;
+    aspect-ratio: 1/1;
+    margin: 20px auto;
+    position: absolute;
+    display: none;
+}
+
 .grey{
-    filter: blur(5px) saturate(0);
+    filter: blur(3px) saturate(0);
 }
 
 h1{
@@ -158,5 +173,15 @@ header p{
     font-size: 1.5rem;
     font-weight: bold;
     padding: 50px;
+}
+
+#map{
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    margin: auto;
+}
+
+#map * {
+    border: none
 }
 
