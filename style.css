@@ -299,7 +299,7 @@ main section:last-of-type *{
 #map{
     width: 60%;
     aspect-ratio: 1 / 1;
-    margin: auto;
+    margin: 50px auto;
 }
 
 /* remove every border possible within "leaflet/open street map" map*/
