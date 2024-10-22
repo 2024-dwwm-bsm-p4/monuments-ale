@@ -169,8 +169,13 @@ section:nth-of-type(2):hover div:not(:hover){
 /* Move the hover img forward */
 section:nth-of-type(2) div:hover{
     transform: translateZ(50px);
-    
+
+        &.grey{
+            filter: saturate(1) blur(0); 
+        }
 }
+
+
 
 /* The selector "+ *" target any element directly after the previous target (section:nth-of-type(2) in this case) */
 section:nth-of-type(2) div:hover + *{
