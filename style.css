@@ -243,7 +243,7 @@ section:nth-of-type(2) div:has(+ * + * + * + *:hover){
     section:nth-of-type(2) div:hover + *,
     section:nth-of-type(2) div:hover + * + *,
     section:nth-of-type(2) div:hover + * + * + *,
-    section:nth-of-type(2) div:hover + * + * + * + *    
+    section:nth-of-type(2) div:hover + * + * + * + *
     {
         transform: rotateY(0deg);
         transform: translateZ(0px);
