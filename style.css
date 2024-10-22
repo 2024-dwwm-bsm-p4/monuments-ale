@@ -169,7 +169,7 @@ section:nth-of-type(2):hover div:not(:hover){
 /* Move the hover img forward */
 section:nth-of-type(2) div:hover{
     transform: translateZ(50px);
-
+        /* change the filter when hover if the div get the grey class */
         &.grey{
             filter: saturate(1) blur(0); 
         }
@@ -253,7 +253,7 @@ section:nth-of-type(2) div:has(+ * + * + * + *:hover){
         filter: blur(3px) saturate(0);
     }
 }
-
+/* End of firefox specific style */
 
 /* Select the last section (the section which contain all the infos about the monument)*/
 main section:last-of-type{
